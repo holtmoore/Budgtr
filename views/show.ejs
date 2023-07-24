@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Budgets</title>
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/skeleton.css">
+</head>
+<body>
+    <h1>My Budgets</h1>
+    <% budget.forEach(item => { %>
+        <p><%= item.name %>: <%= item.amount %></p>
+    <% }) %>
+</body>
+</html>
