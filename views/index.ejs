@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Budgets</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/normalize.css">
     <link rel="stylesheet" href="/skeleton.css">
+    <title>Budgtr</title>
 </head>
 <body>
-    <h1>My Budgets</h1>
-    <% budget.forEach(item => { %>
-        <p><%= item.name %>: <%= item.amount %></p>
-    <% }) %>
+    <div class="container">
+        <h1>Budgtr ALL</h1>
+        <% budget.forEach(item => { %>
+            <p><%= item.name %>: <%= item.amount %></p>
+        <% }) %>
+    </div>
 </body>
 </html>
+
