@@ -1,14 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Budgets</title>
-    <link rel="stylesheet" href="/normalize.css">
-    <link rel="stylesheet" href="/skeleton.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/skeleton.css">
+    <title>Show Page</title>
 </head>
 <body>
-    <h1>My Budgets</h1>
-    <!-- <% budget.forEach(item => { %>
-        <p><%= item.name %>: <%= item.amount %></p>
-    <% }) %> -->
+    <div class="container">
+        <h1><%= budgetItem.name %></h1>
+        <table>
+            <tr>
+                <th>Date</th>
+                <td><%= budgetItem.date %></td>
+            </tr>
+            <tr>
+                <th>From</th>
+                <td><%= budgetItem.from %></td>
+            </tr>
+            <tr>
+                <th>Amount</th>
+                <td><%= budgetItem.amount %></td>
+            </tr>
+            <tr>
+                <th>Tags</th>
+                <% if (Array.isArray(budgetItem.tags)) { %>
+                    <td><%= budgetItem.tags.join(', ') %></td>
+                <% } else { %>
+                    <td>None</td>
+                <% } %>
+            </tr>
+        </table>
+        <button onclick="window.location.href='/budgets'">Back</button>
+    </div>
 </body>
 </html>

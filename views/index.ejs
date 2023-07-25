@@ -3,17 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/normalize.css">
-    <link rel="stylesheet" href="/skeleton.css">
-    <title>Budgtr</title>
+    <link rel="stylesheet" type="text/css" href="/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/skeleton.css">
+    <title>Index</title>
 </head>
 <body>
     <div class="container">
         <h1>Budgtr ALL</h1>
-        <% budget.forEach(item => { %>
-            <p><%= item.name %>: <%= item.amount %></p>
-        <% }) %>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i = 0; i < budget.length; i++) { %>
+                    <tr>
+                        <td><%= budget[i].date %></td>
+                        <td><a href="/budgets/<%= i %>"><%= budget[i].name %></a></td>
+                        <td><%= budget[i].amount %></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+        <a href="/budgets/new" class="button">Add New Entry</a>
     </div>
 </body>
 </html>
-

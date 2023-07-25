@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Budgets</title>
-    <link rel="stylesheet" href="/normalize.css">
-    <link rel="stylesheet" href="/skeleton.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/skeleton.css">
+    <title>Add New Entry</title>
 </head>
 <body>
-    <h1>My Budgets</h1>
-    <!-- <% budget.forEach(item => { %>
-        <p><%= item.name %>: <%= item.amount %></p>
-    <% }) %> -->
+    <div class="container">
+        <h1>Add a new entry</h1>
+        <form action="/budgets" method="POST">
+            <input type="date" name="date" required>
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="number" name="amount" placeholder="Amount" required>
+            <input type="text" name="from" placeholder="From" required>
+            <input type="text" name="tags" placeholder="Tags">
+            <input type="submit" value="Submit">
+        </form>
+        <button onclick="window.location.href='/budgets'">Back</button>
+    </div>
 </body>
 </html>
