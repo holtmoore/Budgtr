@@ -6,10 +6,16 @@
     <link rel="stylesheet" type="text/css" href="/normalize.css">
     <link rel="stylesheet" type="text/css" href="/skeleton.css">
     <title>Index</title>
+    <style>
+        body {
+            background-color: <%= bankAccount < 0 ? 'red' : (bankAccount > 1000 ? 'green' : 'white') %>;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>Budgtr ALL</h1>
+        <h2>Bank Account: <%= bankAccount %></h2>
         <table>
             <thead>
                 <tr>
